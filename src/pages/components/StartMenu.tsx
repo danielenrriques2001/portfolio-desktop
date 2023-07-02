@@ -33,17 +33,27 @@ const StartMenu = () => {
           alt='this is a close tab image'
           position={'absolute'}
           top={-1}
-          left={-1}
-          w={20}
+          left={1}
+          w={'3rem'}
+          
          
-          transition={'all 4s ease-in-out'}
+         
           onClick={() => setStartMenu(false)}
           
          
           />
 
+
+          <Image 
+            src='/assets/ai-profile.jpg' 
+            alt='this is profile picture im daniel'
+            padding={'15px'}
+            borderRadius={'45px'}
+            shadow={'xs'}
+            />
+
           <Stack
-            marginTop={'5rem'}
+            marginTop={'1rem'}
           >
             <Button
               fontFamily={'Space Grotesk'}
@@ -51,7 +61,7 @@ const StartMenu = () => {
               display={'flex'}
               justifyContent={'center'}
               alignItems={'center'}
-              onClick={() => {handleIsOn(); setStartMenu(false)}}
+              onClick={() => {handleIsOn(); setStartMenu(!startMenu)}}
 
             >
 

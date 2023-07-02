@@ -13,6 +13,7 @@ const AppProvider = ({children}) => {
     })
 
     const [startMenu, setStartMenu] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
         const handleIsOn = () => {
 
