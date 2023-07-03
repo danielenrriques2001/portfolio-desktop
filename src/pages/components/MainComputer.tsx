@@ -4,6 +4,7 @@ import SearchDesktop from './Layout/SearchDesktop';
 import Overlay from './Overlay';
 import UseApp from '@/hooks/UseApp';
 import StartMenu from './StartMenu';
+import Desktop from './Desktop';
 
 type MainComputerProps = {
     
@@ -31,8 +32,8 @@ const MainComputer:React.FC<MainComputerProps> = () => {
         backgroundRepeat={'no-repeat'}
         backgroundSize={'cover'}    
     >   
-      
        <SearchDesktop/>
+       {isOn.isLoaded && <Desktop/>}
        {startMenu && <StartMenu/>}
        {isOn.loading  &&  <Overlay/>}
 

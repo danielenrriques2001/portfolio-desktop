@@ -16,7 +16,8 @@ import {extendTheme} from '@chakra-ui/react'
         global: () => ({
             body: {
                 bg: 'gray.400',
-                cursor: `url(/assets/pointer-dark.png), pointer`
+                cursor: `url(/assets/pointer-dark.png), pointer`,
+                fontFamily: 'Space Grotesk',
             }
         })
     },
