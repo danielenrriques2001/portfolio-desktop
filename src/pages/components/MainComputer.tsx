@@ -5,6 +5,8 @@ import Overlay from './Overlay';
 import UseApp from '@/hooks/UseApp';
 import StartMenu from './StartMenu';
 import Desktop from './Desktop';
+import ModalComponent from './Modal';
+import LeftIcons from './LeftIcons';
 
 type MainComputerProps = {
     
@@ -12,7 +14,7 @@ type MainComputerProps = {
 
 const MainComputer:React.FC<MainComputerProps> = () => {
 
-    const {isOn, startMenu } = UseApp()
+    const {isOn, startMenu, modal } = UseApp()
     
     return (
 
@@ -36,6 +38,12 @@ const MainComputer:React.FC<MainComputerProps> = () => {
        {isOn.isLoaded && <Desktop/>}
        {startMenu && <StartMenu/>}
        {isOn.loading  &&  <Overlay/>}
+
+       {modal.state && (
+        <ModalComponent>
+            
+        </ModalComponent>
+       )}
 
 
        

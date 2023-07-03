@@ -20,7 +20,10 @@ const LeftIcons:React.FC<LeftIconsProps> = () => {
                 padding={'25px'}
                 background={'none'}
                 
-                _hover={{background: 'none'}}
+                _hover={{
+                    background: 'none',
+                    cursor: 'url(/assets/pointer-icon.png), pointer'
+                }}
             >
                 <Image 
                     src={'/assets/github-icon.png'} 
@@ -35,7 +38,8 @@ const LeftIcons:React.FC<LeftIconsProps> = () => {
                     href={'https://github.com/danielenrriques2001'}
                     _hover={{
                         textDecoration: 'none', 
-                        color: 'whiteAlpha.900'
+                        color: 'whiteAlpha.900',
+                        cursor: 'url(/assets/pointer-icon.png), pointer'
                     }}
                     isExternal
                     
@@ -54,7 +58,8 @@ const LeftIcons:React.FC<LeftIconsProps> = () => {
                 background={'none'}
                 
                 _hover={{
-                        background: 'none'
+                        background: 'none',
+                        cursor: 'url(/assets/pointer-icon.png), pointer'
                     }}
             >
                 <Image 
@@ -73,7 +78,8 @@ const LeftIcons:React.FC<LeftIconsProps> = () => {
                     color={'whiteAlpha.700'}
                     _hover={{
                             textDecoration: 'none', 
-                            color: 'whiteAlpha.900'
+                            color: 'whiteAlpha.900',
+                            cursor: 'url(/assets/pointer-icon.png), pointer'
                         }}
                     >Linkedin
                 </Link>

@@ -14,6 +14,10 @@ const AppProvider = ({children}) => {
 
     const [startMenu, setStartMenu] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    const [modal, setModal] = useState({
+        state: false,
+        view: ''
+    })
 
         const handleIsOn = () => {
 
@@ -68,7 +72,9 @@ const AppProvider = ({children}) => {
             isOn,
             handleIsOn,
             startMenu,
-            setStartMenu
+            setStartMenu,
+            modal,
+            setModal
         }}
         >
 

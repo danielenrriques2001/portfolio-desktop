@@ -1,3 +1,4 @@
+import UseApp from '@/hooks/UseApp';
 import { Button, Flex, Image, Link, Text } from '@chakra-ui/react';
 import React from 'react';
 
@@ -7,12 +8,34 @@ type RightIconsProps = {
 
 const RightIcons:React.FC<RightIconsProps> = () => {
     
+    const {modal, setModal} = UseApp();
+
+    const updatedModal = {
+
+    about: {
+            view: 'about',
+            state: true
+        },
+    
+    projects: {
+            view: 'projects',
+            state: true
+        },
+    
+    experience: {
+            view: 'experience',
+            state: true
+        }
+        
+    }
+
     return (
         <Flex
             flexDirection={'column'}
             gap={10}
         >
             <Button
+                onClick={() => {setModal(updatedModal.about)}}
                 display={'flex'}
                 flexDirection={'column'}
                 width={'8rem'}
@@ -20,7 +43,10 @@ const RightIcons:React.FC<RightIconsProps> = () => {
                 padding={'25px'}
                 background={'none'}
                 
-                _hover={{background: 'none'}}
+                _hover={{
+                    background: 'none',
+                    cursor: 'url(/assets/pointer-icon.png), pointer'
+                }}
             >
                 <Image 
                     src={'/assets/profile-icon.png'} 
@@ -51,9 +77,10 @@ const RightIcons:React.FC<RightIconsProps> = () => {
                 margin={0}
                 padding={'25px'}
                 background={'none'}
-                
+                onClick={() => {setModal(updatedModal.projects)}}
                 _hover={{
-                        background: 'none'
+                        background: 'none',
+                        cursor: 'url(/assets/pointer-icon.png), pointer'
                     }}
             >
                 <Image 
@@ -70,6 +97,7 @@ const RightIcons:React.FC<RightIconsProps> = () => {
                     _hover={{
                             textDecoration: 'none', 
                             color: 'whiteAlpha.900'
+
                         }}
                     >Projects
                 </Text>
@@ -82,9 +110,10 @@ const RightIcons:React.FC<RightIconsProps> = () => {
                 margin={0}
                 padding={'25px'}
                 background={'none'}
-                
+                onClick={() => {setModal(updatedModal.experience)}}
                 _hover={{
-                        background: 'none'
+                        background: 'none',
+                        cursor: 'url(/assets/pointer-icon.png), pointer'
                     }}
             >
                 <Image 
