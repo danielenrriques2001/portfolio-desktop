@@ -31,9 +31,13 @@ interface ModalProps {
           <ModalOverlay />
           <ModalContent>
             <ModalHeader
+              background={'blackAlpha.900'}
               textTransform={'capitalize'}
-            >{modal.view}</ModalHeader>
-            <ModalCloseButton />
+              color={'gray.100'}
+            >
+              {modal.view}
+            </ModalHeader>
+            <ModalCloseButton color={'white'} />
             <ModalBody>
 
                 {children}
@@ -41,10 +45,6 @@ interface ModalProps {
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={() =>{ setModal(updatedModal)}}>
-                Close
-              </Button>
-              <Button variant="ghost">Secondary Action</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>

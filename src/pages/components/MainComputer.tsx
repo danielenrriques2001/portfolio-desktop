@@ -7,6 +7,7 @@ import StartMenu from './StartMenu';
 import Desktop from './Desktop';
 import ModalComponent from './Modal';
 import LeftIcons from './LeftIcons';
+import About from './About';
 
 type MainComputerProps = {
     
@@ -41,6 +42,7 @@ const MainComputer:React.FC<MainComputerProps> = () => {
 
        {modal.state && (
         <ModalComponent>
+            {modal.view === 'about' && <About/>}
             
         </ModalComponent>
        )}
