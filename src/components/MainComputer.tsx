@@ -6,7 +6,6 @@ import UseApp from '@/hooks/UseApp';
 import StartMenu from './StartMenu';
 import Desktop from './Desktop';
 import ModalComponent from './Modal';
-import LeftIcons from './LeftIcons';
 import About from './About';
 import Projects from './Projects';
 import Experience from './Experience';

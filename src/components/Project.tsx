@@ -22,7 +22,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                 marginBottom={2}
                 py={3}
                 px={2}
-                flexDirection={selectedProject.name ? 'column' : 'row'}
+                flexDirection={selectedProject?.name ? 'column' : 'row'}
                 _hover={{backgroundColor: 'gray.100'}}
             >
 
@@ -40,9 +40,9 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                   
                     >
                     <Text
-                        fontSize={selectedProject.name ? '30pt' : '15pt'}
-                        textTransform={selectedProject.name ? 'uppercase' : 'capitalize'}
-                        textColor={selectedProject.name ? 'gray.600' : ''}
+                        fontSize={selectedProject?.name ? '30pt' : '15pt'}
+                        textTransform={selectedProject?.name ? 'uppercase' : 'capitalize'}
+                        textColor={selectedProject?.name ? 'gray.600' : ''}
                     >
                         {name}
                     </Text>
@@ -51,7 +51,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                         src={'/assets/project.png'} 
                         alt='this is a project icon'
                         w={'25px'}
-                        display={selectedProject.name ? 'none' : ''}
+                        display={selectedProject?.name ? 'none' : ''}
                         
                         />
 
@@ -64,9 +64,9 @@ const Project:React.FC<ProjectProps> = ({project}) => {
 
 
                 <Flex
-                    justifyContent={selectedProject.name  ? 'center' : ''}
-                    gap={selectedProject.name ? 2 : 0}
-                    paddingTop={selectedProject.name ? '45px' : 0}
+                    justifyContent={selectedProject?.name  ? 'center' : ''}
+                    gap={selectedProject?.name ? 2 : 0}
+                    paddingTop={selectedProject?.name ? '45px' : 0}
                 >
 
                 <Link
@@ -130,7 +130,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                 
 
                 </Flex>
-                {selectedProject.name && (
+                {selectedProject?.name && (
                 <Text 
                     fontSize={'13pt'}
                     textAlign={'center'}
@@ -143,10 +143,10 @@ const Project:React.FC<ProjectProps> = ({project}) => {
 
                 <Flex
                     flexGrow={1}
-                    justifyContent={selectedProject.name ? 'center' : 'end'}
-                    mt={selectedProject.name ? '10px' : '0'}
+                    justifyContent={selectedProject?.name ? 'center' : 'end'}
+                    mt={selectedProject?.name ? '10px' : '0'}
                     alignItems={'center'}
-                    gap={selectedProject.name ? 5 : 0}
+                    gap={selectedProject?.name ? 5 : 0}
                     
 
                 >
@@ -163,11 +163,11 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                                 src={`assets/stack/${tech}.png`} 
                                 alt={` this is a icon for ${tech}`}
                                 maxW={'auto'}
-                                maxH={selectedProject.name ? '35px' : '20px'}
+                                maxH={selectedProject?.name ? '35px' : '20px'}
 
                             />
                                 
-                                {selectedProject.name && (              
+                                {selectedProject?.name && (              
 
                                         <Text
                                             fontSize={'10pt'}

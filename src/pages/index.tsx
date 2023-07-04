@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import MainComputer from './components/MainComputer'
+import MainComputer from '@/components/MainComputer'
 import { Flex } from '@chakra-ui/react'
 
 export default function Home() {

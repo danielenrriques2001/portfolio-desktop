@@ -1,7 +1,7 @@
 // pages/_app.js
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app';
-import {theme} from './chakra/theme'
+import {theme} from '../chakra/theme'
 import './global.css'
 import AppProvider from '@/context/AppContext';
 
