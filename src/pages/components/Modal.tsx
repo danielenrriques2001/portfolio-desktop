@@ -15,19 +15,26 @@ interface ModalProps {
     children?: React.ReactNode;
 }
   const ModalComponent: React.FC<ModalProps> =({children}) => {
-    const {modal, setModal} = UseApp()
+    const {modal, setModal, setSelectedProject, selectedProject} = UseApp()
 
     const updatedModal = {
         view: '',
         state: false
     }
-    
+
+    const handleCloseModal = () => {
+      setModal(updatedModal)
+      if(selectedProject.name) {
+        setSelectedProject({})
+      }
+    }
+
 
     return (
       <>
      
   
-        <Modal isOpen={modal.state} onClose={() => setModal(updatedModal)} size={modal.view === 'projects' ? 'xl' : 'sm'}>
+        <Modal isOpen={modal.state} onClose={() => handleCloseModal() } size={'xl'}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader

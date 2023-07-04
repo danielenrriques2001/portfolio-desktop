@@ -75,7 +75,9 @@ const AppProvider = ({children}) => {
             startMenu,
             setStartMenu,
             modal,
-            setModal
+            setModal,
+            selectedProject,
+            setSelectedProject,
         }}
         >
 
