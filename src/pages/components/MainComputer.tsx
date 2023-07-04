@@ -9,6 +9,7 @@ import ModalComponent from './Modal';
 import LeftIcons from './LeftIcons';
 import About from './About';
 import Projects from './Projects';
+import Experience from './Experience';
 
 type MainComputerProps = {
     
@@ -45,6 +46,7 @@ const MainComputer:React.FC<MainComputerProps> = () => {
         <ModalComponent>
             {modal.view === 'about' && <About/>}
             {modal.view === 'projects' && <Projects/>}
+            {modal.view === 'experience' && <Experience/>}
             
         </ModalComponent>
        )}

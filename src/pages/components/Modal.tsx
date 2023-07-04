@@ -38,7 +38,7 @@ interface ModalProps {
           <ModalOverlay />
           <ModalContent>
             <ModalHeader
-              background={'blackAlpha.900'}
+              background={'yellow.600'}
               textTransform={'capitalize'}
               color={'gray.100'}
             >
