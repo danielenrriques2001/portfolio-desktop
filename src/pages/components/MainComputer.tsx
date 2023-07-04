@@ -8,6 +8,7 @@ import Desktop from './Desktop';
 import ModalComponent from './Modal';
 import LeftIcons from './LeftIcons';
 import About from './About';
+import Projects from './Projects';
 
 type MainComputerProps = {
     
@@ -43,6 +44,7 @@ const MainComputer:React.FC<MainComputerProps> = () => {
        {modal.state && (
         <ModalComponent>
             {modal.view === 'about' && <About/>}
+            {modal.view === 'projects' && <Projects/>}
             
         </ModalComponent>
        )}

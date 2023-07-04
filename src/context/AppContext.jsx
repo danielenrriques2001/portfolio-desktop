@@ -18,6 +18,7 @@ const AppProvider = ({children}) => {
         state: false,
         view: ''
     })
+    const [selectedProject, setSelectedProject] = useState({});
 
         const handleIsOn = () => {
 

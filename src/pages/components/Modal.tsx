@@ -27,7 +27,7 @@ interface ModalProps {
       <>
      
   
-        <Modal isOpen={modal.state} onClose={() => setModal(updatedModal)}>
+        <Modal isOpen={modal.state} onClose={() => setModal(updatedModal)} size={modal.view === 'projects' ? 'xl' : 'sm'}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader
