@@ -34,11 +34,11 @@ interface ModalProps {
       <>
      
   
-        <Modal isOpen={modal.state} onClose={() => handleCloseModal() } size={'xl'}>
+        <Modal isOpen={modal.state} onClose={() => handleCloseModal() } size={{'base': 'md', 'md': '3xl'}}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader
-              background={'yellow.600'}
+              background={'pink.400'}
               textTransform={'capitalize'}
               color={'gray.100'}
             >

@@ -20,10 +20,16 @@ const Project:React.FC<ProjectProps> = ({project}) => {
         <Stack>
             <Flex
                 marginBottom={2}
-                py={3}
                 px={2}
                 flexDirection={selectedProject?.name ? 'column' : 'row'}
+                borderBottom={!selectedProject?.name ? '2px solid' : ''}
+                borderBottomColor={!selectedProject?.name ? 'blackAlpha.200' : ''}
+                paddingY={!selectedProject?.name ? '5' : '3'}
+                borderRadius={!selectedProject?.name ? '5' : '0'}
                 _hover={{backgroundColor: 'gray.100'}}
+                justifyContent={'center'}
+                align={'center'}
+                
             >
 
                
@@ -42,15 +48,15 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                     <Text
                         fontSize={selectedProject?.name ? '30pt' : '15pt'}
                         textTransform={selectedProject?.name ? 'uppercase' : 'capitalize'}
-                        textColor={selectedProject?.name ? 'gray.600' : ''}
+                        textColor={selectedProject?.name ? 'gray.700' : 'blackAlpha.800'}
                     >
                         {name}
                     </Text>
                     
                     <Image 
-                        src={'/assets/project.png'} 
+                        src={'/assets/project-icon.png'} 
                         alt='this is a project icon'
-                        w={'25px'}
+                        w={'30px'}
                         display={selectedProject?.name ? 'none' : ''}
                         
                         />
@@ -158,13 +164,17 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                                 flexDirection={'column'}
                                 alignItems={'center'}
                                 justifyContent={'center'}
+                                
                             >
                             <Image 
                                 src={`assets/stack/${tech}.png`} 
                                 alt={` this is a icon for ${tech}`}
                                 maxW={'auto'}
                                 maxH={selectedProject?.name ? '35px' : '20px'}
-
+                                marginRight={!selectedProject?.name ? '15px' : ''}
+                                w={!selectedProject?.name ? '15pt' : ''}
+                                h={'auto'}
+                               
                             />
                                 
                                 {selectedProject?.name && (              

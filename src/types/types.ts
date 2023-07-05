@@ -9,3 +9,11 @@ export type Project = {
     images: string[]
 }
 
+export type Experience = {
+    position: string;
+    year: string;
+    description: string;
+    company: string;
+    project?: string;
+
+}
