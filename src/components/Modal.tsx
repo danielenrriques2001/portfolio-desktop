@@ -15,7 +15,7 @@ interface ModalProps {
     children?: React.ReactNode;
 }
   const ModalComponent: React.FC<ModalProps> =({children}) => {
-    const {modal, setModal, setSelectedProject, selectedProject} = UseApp()
+    const {modal, setModal, setSelectedProject, selectedProject, setSelectedImage, selectedImage} = UseApp()
 
     const updatedModal = {
         view: '',
@@ -27,6 +27,31 @@ interface ModalProps {
       if(selectedProject.name) {
         setSelectedProject({})
       }
+      if(selectedImage.current) {
+        setSelectedImage({})
+      }
+    }
+
+    const defineModalColor = (view: string): string => {
+
+      switch (view) {
+        case 'experience':
+          return 'red.400'
+          break;
+        
+        case 'projects':
+          return 'blue.400'
+          break;
+
+        case 'about':
+          return 'orange.400'
+          break;
+      
+        default:
+          return 'green.500'
+          break;
+      }
+      return ''
     }
 
 
@@ -38,7 +63,7 @@ interface ModalProps {
           <ModalOverlay />
           <ModalContent>
             <ModalHeader
-              background={'pink.400'}
+              background={defineModalColor(modal.view)}
               textTransform={'capitalize'}
               color={'gray.100'}
             >

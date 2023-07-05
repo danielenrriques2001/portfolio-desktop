@@ -1,3 +1,4 @@
+import UseApp from '@/hooks/UseApp';
 import { Experience } from '@/types/types';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
@@ -8,6 +9,8 @@ type TimeLineItemProps = {
 };
 
 const TimeLineItem:React.FC<TimeLineItemProps> = ({job}) => {
+
+
 
     const {position, description, year, company} = job;
     
@@ -27,7 +30,7 @@ const TimeLineItem:React.FC<TimeLineItemProps> = ({job}) => {
             left: '1px',
             marginLeft: '-3px',
             border: '4px solid',
-            borderColor: '#d7915c',
+            borderColor: 'red.400',
             borderRadius: '50%',
             zIndex: 1
         }}

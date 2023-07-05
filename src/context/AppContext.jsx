@@ -19,6 +19,7 @@ const AppProvider = ({children}) => {
         view: ''
     })
     const [selectedProject, setSelectedProject] = useState({});
+    const [selectedImage, setSelectedImage] = useState({});
 
         const handleIsOn = () => {
 
@@ -78,6 +79,8 @@ const AppProvider = ({children}) => {
             setModal,
             selectedProject,
             setSelectedProject,
+            setSelectedImage,
+            selectedImage
         }}
         >
 

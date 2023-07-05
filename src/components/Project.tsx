@@ -2,7 +2,7 @@ import UseApp from '@/hooks/UseApp';
 import { Project } from '@/types/types';
 import { Box, Button, Link } from '@chakra-ui/react'
 import { Flex, Stack, Text, Image } from '@chakra-ui/react';
-import React from 'react';
+import { ArrowBackIcon, ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 
 type ProjectProps = {
     project: Project
@@ -10,9 +10,96 @@ type ProjectProps = {
 
 const Project:React.FC<ProjectProps> = ({project}) => {
 
-    const {setSelectedProject, selectedProject} = UseApp()
+    const {setSelectedProject, selectedProject, setSelectedImage, selectedImage} = UseApp()
 
     const {name, description, github, link, images, stack} = project;
+
+
+
+    if(selectedImage.current) return (
+        
+        <Flex
+            flexDirection={'column'}
+            alignItems={'center'}
+            justifyContent={'center'}
+            marginBottom={'15pt'}
+            marginTop={'5pt'}
+            
+                                                    
+            >
+                        <Flex
+                            alignItems={'center'}
+                            w={'100%'}
+                            justifyContent={'space-between'}
+                            cursor={'pointer'}
+                            transition={'ease-in-out 2s all'}
+                            
+                        >
+                        <ArrowBackIcon 
+                                boxSize={6}
+                                zIndex={3}
+                                onClick={() => {setSelectedImage({})}}
+                                
+                               
+                        />
+                        <Text
+                            fontSize={'25pt'}
+                            textTransform={'uppercase'}
+                            color={'gray.400'}
+                            fontWeight={200}
+                            >
+                            {name}
+                        </Text>
+                        </Flex>
+                            
+                            <Image 
+                                 src={`assets/projects/${name}/${selectedImage.current}.png`} 
+                                 alt={` this is a icon for ${selectedImage}`}
+                                
+                               
+                                marginRight={!selectedProject?.name ? '15px' : ''}
+                                w={!selectedProject?.name ? '15pt' : ''}
+                                h={'auto'}
+                               
+                            />
+
+                            <Flex
+                                justifyContent={'center'}
+                                gap={'2rem'}
+                                width={'100%'}
+                                py={'5px'}
+                            >
+                                <ArrowLeftIcon
+                                    color={'gray.400'}
+                                    boxSize={5}
+                                    _hover={{color: 'gray.600'}}
+                                    cursor={'pointer'}
+                                    onClick={() => {
+                                        setSelectedImage({
+                                            current: images[images.indexOf(selectedImage?.current)  - 1],
+                                            prev:  images[images.indexOf(selectedImage?.current)  - 2],
+                                            next:  images[images.indexOf(selectedImage?.current)]
+                                        })
+                                    }}
+                                    
+                                />
+                                <ArrowRightIcon
+                                    color={'gray.400'}
+                                    boxSize={5}
+                                    _hover={{color: 'gray.600'}}
+                                    cursor={'pointer'}
+                                    onClick={() => {
+                                        setSelectedImage({
+                                            current: images[images.indexOf(selectedImage?.current)  + 1],
+                                            prev: images[images.indexOf(selectedImage?.current)  - 1],
+                                            next: images[images.indexOf(selectedImage?.current) + 2]
+                                        })
+                                    }}
+                                />
+                            </Flex>
+                            
+                            </Flex>
+    )
 
 
     
@@ -166,6 +253,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                                 marginBottom={'15pt'}
                                 marginTop={'5pt'}
                                 
+                                
                             >
                             <Image 
                                 src={`assets/stack/${tech}.png`} 
@@ -201,20 +289,34 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                 {
                     selectedProject.name && (
                         <Flex
-                           
-                            flexDirection={'column'}
-                            gap={3}
+                            w={'100%'}
+                            flexWrap={'wrap'}
                             justifyContent={'center'}
-                            align={'center'}
-                            mt={5}
                         >
                            {
-                            images.map(image => (
+                            images.map((image, index) => (
+                                <Box 
+                                    m={'5px'}
+                                    border={'1px solid'}
+                                    borderColor={'gray.200'}
+                                   
+                                    width={'300px'}
+                                >
                                 <Image 
                                     src={`assets/projects/${name}/${image}.png`} 
                                     alt={`this is a image for: ${name}, and image: ${image}`}
-                                  
-                                    />
+                                    w={'100%'}
+                                    height={'auto'}
+                                    onClick={() => setSelectedImage({
+                                            current: image, 
+                                            next: images[index + 1], 
+                                            prev: images[index - 1]
+                                        })}
+                                />
+
+
+                                </Box>
+
                             ))
                            } 
                         </Flex>
