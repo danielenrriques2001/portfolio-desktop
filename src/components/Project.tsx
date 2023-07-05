@@ -27,8 +27,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                 paddingY={!selectedProject?.name ? '5' : '3'}
                 borderRadius={!selectedProject?.name ? '5' : '0'}
                 _hover={{backgroundColor: 'gray.100'}}
-                justifyContent={'center'}
-                align={'center'}
+               
                 
             >
 
@@ -140,7 +139,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                 <Text 
                     fontSize={'13pt'}
                     textAlign={'center'}
-                    marginTop={'15px'}
+                    marginTop={'20pt'}
                     color={'gray.600'}
                 >
                     Technologies I have used for this project:
@@ -164,6 +163,8 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                                 flexDirection={'column'}
                                 alignItems={'center'}
                                 justifyContent={'center'}
+                                marginBottom={'15pt'}
+                                marginTop={'5pt'}
                                 
                             >
                             <Image 
