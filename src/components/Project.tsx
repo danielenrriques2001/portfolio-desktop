@@ -161,7 +161,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
 
                 <Link
                     isExternal
-                    href={link}
+                    href={github}
                     display={'flex'}
                     justifyContent={'center'}
                     alignItems={'center'}
