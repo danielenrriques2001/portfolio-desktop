@@ -12,7 +12,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
 
     const {setSelectedProject, selectedProject, setSelectedImage, selectedImage} = UseApp()
 
-    const {name, description, github, link, images, stack} = project;
+    const {name, description, github, link, images, stack, id} = project;
 
 
 
@@ -53,7 +53,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                         </Flex>
                             
                             <Image 
-                                 src={`assets/projects/${name}/${selectedImage.current}.png`} 
+                                 src={`assets/projects/${id}/${selectedImage.current}.png`} 
                                  alt={` this is a icon for ${selectedImage}`}
                                 
                                
@@ -301,7 +301,7 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                                     width={'300px'}
                                 >
                                 <Image 
-                                    src={`assets/projects/${name}/${image}.png`} 
+                                    src={`assets/projects/${id}/${image}.png`} 
                                     alt={`this is a image for: ${name}, and image: ${image}`}
                                     w={'100%'}
                                     height={'auto'}

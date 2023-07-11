@@ -2,9 +2,14 @@ import { createContext, useEffect, useState } from "react";
 import React from 'react'
 
 
-export const AppContext = createContext();
 
-const AppProvider = ({children}) => {
+export const AppContext = createContext({});
+
+type AppContextProviderProps = {
+    children: React.ReactNode;
+}
+
+const AppProvider = ({children}: AppContextProviderProps) => {
 
     const [isOn, setIsOn] = useState({
        loading: false,
@@ -37,7 +42,8 @@ const AppProvider = ({children}) => {
 
             setIsOn({
                     loading: true,
-                    view: 'loading Data...'
+                    view: 'loading Data...',
+                    isLoaded: false
                 })
                 
 
@@ -70,7 +76,7 @@ const AppProvider = ({children}) => {
     
     return (
         <AppContext.Provider
-        value={{
+        value={{    
             isOn,
             handleIsOn,
             startMenu,

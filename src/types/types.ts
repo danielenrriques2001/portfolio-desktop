@@ -6,7 +6,8 @@ export type Project = {
     description: string;
     link: string;
     github: string;
-    images: string[]
+    images: string[];
+    id: string;
 }
 
 export type Experience = {
