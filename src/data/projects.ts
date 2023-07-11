@@ -10,14 +10,14 @@ const PROJECTS: Project[] = [
         github: 'https://github.com/danielenrriques2001/yautia-app',
         images: ['gyst-1', 'gyst-2', 'gyst-3', 'gyst-4', 'gyst-5'],
     },
-    // {
-    //     name: 'uptask',
-    //     stack: ['mongodb', 'nextjs', 'moongose', 'headlessUI', 'tailwindcss'],
-    //     description: 'In this particular project, I decided to create a website where users can collaborate together on different projects. I think that as a programmer 80% of our time is spent collaborating with the other members of our team. For this reason I have decided to create a project like this, where users can receive in real time the creation of new tasks or their completion.',
-    //     link: '',
-    //     github: 'https://github.com/danielenrriques2001/upstack_express',
-    //     images: []
-    // },
+    {
+        name: `frank`,
+        stack: ['astro', 'react'],
+        description: `Within this freelancing project, I honed my time management skills and created a visually captivating website while currently developing a booking system for enhanced functionality.  Our goal was to create a sleek and visually appealing platform that perfectly complements the elegant simplicity of the apartment itself. Upon entering the website, youll be greeted by a clean and uncluttered interface, allowing the apartment's captivating features to take center stage. The carefully chosen color palette and minimalist typography exude a sense of sophistication and modernity, ensuring a seamless browsing experience. High-resolution images grace every page, showcasing the apartment's tastefully curated interior, from the airy living spaces to the cozy bedrooms. The use of white space and intuitive navigation effortlessly guides visitors through the site, making it easy to explore and discover the apartment's unique charm.`,
+        link: 'https://franks-apartment.vercel.app/de/',
+        github: 'https://github.com/danielenrriques2001/franks-apartment',
+        images: ['frank-1', 'frank-2', 'frank-3', 'frank-4']
+    },
     {
         name: 'kiosk',
         stack: ['react', 'reactRouterDom', 'prisma', 'tailwindcss', 'typescript', 'axios', 'swr'],

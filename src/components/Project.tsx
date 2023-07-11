@@ -114,8 +114,6 @@ const Project:React.FC<ProjectProps> = ({project}) => {
                 paddingY={!selectedProject?.name ? '5' : '3'}
                 borderRadius={!selectedProject?.name ? '5' : '0'}
                 _hover={{backgroundColor: 'gray.100'}}
-               
-                
             >
 
                
