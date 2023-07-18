@@ -2,21 +2,33 @@ import { Box } from '@chakra-ui/react';
 import React, { Fragment } from 'react';
 import SearchDesktop from './Layout/SearchDesktop';
 import Overlay from './Overlay';
-import UseApp from '@/hooks/UseApp';
 import StartMenu from './StartMenu';
 import Desktop from './Desktop';
 import ModalComponent from './Modal';
 import About from './About';
 import Projects from './Projects';
 import Experience from './Experience';
+import UseApp from '@/hooks/UseApp';
+import { ObjectType } from 'typescript';
 
-type MainComputerProps = {
+
+
+const MainComputer:React.FC= () => {
+
+    const MODAL_MODUS = {
+        'about': About,
+        'projects': Projects,
+        'experience' : Experience,
+    }
+
+    const {isOn, startMenu, modal } = UseApp();
+
+    const SelectedView = MODAL_MODUS[modal.view as keyof typeof MODAL_MODUS];
+
     
-};
 
-const MainComputer:React.FC<MainComputerProps> = () => {
 
-    const {isOn, startMenu, modal } = UseApp()
+    
     
     return (
 
@@ -43,23 +55,11 @@ const MainComputer:React.FC<MainComputerProps> = () => {
 
        {modal.state && (
         <ModalComponent>
-            {modal.view === 'about' && <About/>}
-            {modal.view === 'projects' && <Projects/>}
-            {modal.view === 'experience' && <Experience/>}
-            
+            <SelectedView/>
         </ModalComponent>
        )}
 
-
-       
-
-    
-
     </Box>
-
-
-
-   
 
     </Fragment>
     

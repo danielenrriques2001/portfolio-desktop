@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/context/AppContext.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/context/AppContext.jsx", "src/hooks/UseApp.jsx", "src/hooks/UseApp.jsx"],
   "exclude": ["node_modules"]
 }

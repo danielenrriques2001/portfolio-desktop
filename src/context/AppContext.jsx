@@ -2,14 +2,13 @@ import { createContext, useEffect, useState } from "react";
 import React from 'react'
 
 
+export const AppContext = createContext();
 
-export const AppContext = createContext({});
 
-type AppContextProviderProps = {
-    children: React.ReactNode;
-}
 
-const AppProvider = ({children}: AppContextProviderProps) => {
+const AppProvider = ({children}) => {
+
+
 
     const [isOn, setIsOn] = useState({
        loading: false,
@@ -65,15 +64,7 @@ const AppProvider = ({children}: AppContextProviderProps) => {
         }
     }, [isOn])
 
-    
-
-
-
-    
-
    
-
-    
     return (
         <AppContext.Provider
         value={{    
