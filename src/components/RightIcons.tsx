@@ -57,7 +57,7 @@ const RightIcons:React.FC<RightIconsProps> = () => {
                 width={'25px'}
                 height={'25px'}
                 margin={0}
-                padding={'50px'}
+                padding={'45px'}
                 background={'gray.700'}
                 borderRadius={'50%'}
                

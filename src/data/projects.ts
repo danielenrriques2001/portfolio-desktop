@@ -23,7 +23,7 @@ const PROJECTS: Project[] = [
     {
         name: 'Kiosku: Order & Pick',
         id: 'kiosk',
-        stack: ['react', 'reactRouterDom', 'prisma', 'tailwindcss', 'typescript', 'axios', 'swr'],
+        stack: ['react', 'reactRouterDom', 'prisma', 'tailwindcss', 'axios', 'swr'],
         description: 'In this project I have decided to implement the simulation for a cafe rodande where customers can order from a screen or on the internet. I have created two views, one for the customer that shows the items and the status of their order; and the other view is for the kitchen staff who can receive the orders and prepare them.',
         link: 'https://kioskku-production.up.railway.app/',
         github: 'https://github.com/danielenrriques2001/kioskku',
