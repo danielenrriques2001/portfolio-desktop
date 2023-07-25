@@ -1,143 +1,88 @@
 import UseApp from '@/hooks/UseApp';
-import { Button, Flex, Image, Link, Text } from '@chakra-ui/react';
+import { Button, Flex, Image, Link, Text, keyframes } from '@chakra-ui/react';
 import React from 'react';
 
 type RightIconsProps = {
     
 };
 
+const float = keyframes`
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+`;
+
 const RightIcons:React.FC<RightIconsProps> = () => {
     
     const {modal, setModal} = UseApp();
+    const floatAnimation = `${float} infinite 2s linear`;   
 
-    const updatedModal = {
+    const updatedModal = [ 
 
-    about: {
+   {
             view: 'about',
-            state: true
+            state: true,
         },
     
-    projects: {
+    {
             view: 'projects',
-            state: true
+            state: true,
         },
     
-    experience: {
+   {
             view: 'experience',
-            state: true
-        }
+            state: true,
+        },
         
-    }
+    ]
 
     return (
         <Flex
-            flexDirection={'column'}
-            gap={10}
+            gap={5}
         >
-            <Button
-                onClick={() => {setModal(updatedModal.about)}}
+            {
+                updatedModal.map(modal => (
+                    <Button
                 display={'flex'}
                 flexDirection={'column'}
-                width={'8rem'}
+                width={'25px'}
+                height={'25px'}
                 margin={0}
-                padding={'25px'}
-                background={'none'}
-                
+                padding={'50px'}
+                background={'gray.700'}
+                borderRadius={'50%'}
+               
+                onClick={() => {setModal(modal)}}
                 _hover={{
-                    background: 'none',
-                    cursor: 'url(/assets/pointer-icon.png), pointer'
-                }}
-            >
-                <Image 
-                    src={'/assets/profile-icon.png'} 
-                    alt='this is the github icon'
-                    w={'45px'}
-                    mb={1}
-                    
-                    
-                    />
-                <Text 
-
-                    color={'whiteAlpha.700'}
-                    _hover={{
-                        textDecoration: 'none', 
-                        color: 'whiteAlpha.900'
-                    }}
-                    
-                    
-                    >About Me
-                </Text>
-            </Button>
-
-
-            <Button
-                display={'flex'}
-                flexDirection={'column'}
-                width={'8rem'}
-                margin={0}
-                padding={'25px'}
-                background={'none'}
-                onClick={() => {setModal(updatedModal.projects)}}
-                _hover={{
-                        background: 'none',
-                        cursor: 'url(/assets/pointer-icon.png), pointer'
+                        background: 'gray.900',
+                        cursor: 'url(/assets/pointer-icon.png), pointer',
+                        animation: floatAnimation
                     }}
             >
-                <Image 
-                    src={'/assets/projects-icon-big.png'} 
-                    alt='this is the linkedin icon'
-                    width={'3rem'}
-                    marginBottom={1}
-                    
-                    
-                    
-                    />
-                <Text                     
-                    color={'whiteAlpha.700'}
+                <Text                
+                    fontWeight={200}     
+                    color={'whiteAlpha.900'}
                     _hover={{
                             textDecoration: 'none', 
                             color: 'whiteAlpha.900'
 
                         }}
-                    >Projects
-                </Text>
-            </Button>
-
-            <Button
-                display={'flex'}
-                flexDirection={'column'}
-                width={'8rem'}
-                margin={0}
-                padding={'25px'}
-                background={'none'}
-                onClick={() => {setModal(updatedModal.experience)}}
-                _hover={{
-                        background: 'none',
-                        cursor: 'url(/assets/pointer-icon.png), pointer'
-                    }}
-            >
-                <Image 
-                    src={'/assets/experience-icon-big.png'} 
-                    alt='this is the linkedin icon'
-                    width={'3rem'}
-                    marginBottom={1}
-                    
-                    
-                    
-                    />
-                <Text                     
-                    color={'whiteAlpha.700'}
-                    _hover={{
-                            textDecoration: 'none', 
-                            color: 'whiteAlpha.900'
-                        }}
-                    >Experience
+                    >{modal.view}
                 </Text>
             </Button>
 
 
-            
-
+                ))
+            }
 
             
         </Flex>

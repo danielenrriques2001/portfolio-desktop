@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import React, { Fragment } from 'react';
 import SearchDesktop from './Layout/SearchDesktop';
 import Overlay from './Overlay';
@@ -42,7 +42,7 @@ const MainComputer:React.FC= () => {
         borderColor={'black.700'}
         borderRadius={'15px'}
         position={'relative'}
-
+        flexDirection={'column'}
         backgroundImage={ isOn.isLoaded ? '/assets/background-anime.png' : ''}
         backgroundPosition={'center'}
         backgroundRepeat={'no-repeat'}
